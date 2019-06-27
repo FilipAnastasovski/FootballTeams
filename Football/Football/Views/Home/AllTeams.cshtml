@@ -1,0 +1,23 @@
+﻿@model List<Team>
+@{
+    ViewData["Title"] = "AllTeams";
+}
+
+<h1>AllTeams</h1>
+
+<div>
+    <h1 class="display-4">Welcome</h1>
+
+    @foreach (var team in Model)
+    {
+        <h3>@team.Name</h3>
+        <h3>@team.Trainer.FirstName</h3>
+        <ol>
+            @foreach (var player in team.Players)
+            {
+            <li>Player name: @player.FirstName | Dress number @player.DressNum</li>
+            }
+        </ol>
+    }
+
+</div>
